@@ -4,7 +4,7 @@
 }
 
 .center {
-    background-color:#f7cbd2;
+    background-color:#fdc8d2;
     height: 100px;
     display: flex; 
     gap: 10px; 
@@ -12,6 +12,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
+    background-color:#f0f0f0;
 }
 
 .material-symbols-outlined {
@@ -23,19 +24,21 @@ body {
 }
 
 div {
-    color:antiquewhite;
+    color:white;
 }
 
 .box1 {
-    padding: 1px;
-    width: 20%; /* Largura fixa, pode ser alterada */
-    text-align: left;
+    padding: 30px;
+    width: 50%; /* Largura fixa, pode ser alterada */
+    text-align: center;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .box2 {
     padding: 30px;
     width: 50%; /* Largura fixa, pode ser alterada */
-    text-align: center;
+    text-align: left;
     border-radius: 5px;
     box-sizing: border-box;
 }
