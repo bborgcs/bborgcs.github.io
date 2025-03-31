@@ -8,39 +8,82 @@
 
 body{
     background-color: white;
+    font-family: Playfair Display;
 }
 
 header{
     background-color: cadetblue;
     width:100%;
-    height: 90px;
-    text-align: center;
+    height: 100px;
     background-image: linear-gradient(cadetblue, rgb(179, 203, 204));
+    display: flex;
+    justify-content: center; 
+
 }
 
 footer{
     background-color: cadetblue;
     width:100%;
-    height: 90px;
+    height: 100px;
     background-image: linear-gradient(rgb(179, 203, 204), cadetblue);
 }
 
 h1 { 
-	font-family: Playfair Display; 
+    margin-top: 25px; 
+    color: white;
+    text-shadow: 2px 2px 5px black;
 }
 
-section{
+.section-home{
     justify-content: center;
+    align-items: center;
     display: flex;
-    height: 76vh;
+    height: 70vh;
 }
+
+.section-game{
+    justify-content: center;
+    align-items: center;
+    margin-left: 32%;
+    height: 70vh;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+}
+
+.container{
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.texto{
+    color: cadetblue;
+    text-shadow: 2px 2px 5px black;
+    font-size: 20px;
+}
+
 
 .imgaristogatos{
-    width:100px;
+    width:70px;
     height:70px;
     border-radius: 50%;
+    margin-right: 700px;
+    margin-top: 11px;
 }
 
-.divheader1{
+.imagemtemas{
+    width: 200px;
+    height: 200px;
+    margin:15px;
+    border-radius: 10%;
+    box-shadow: 5px 5px cadetblue;
+}
 
+
+.imagemtemas:hover {
+    width: 202px;
+    height: 202px;
+    opacity: 0.9;
 }
