@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jogo da memória - Toulouse</title>
+</head>
+<body>
+    <header>
+        <div>
+            <img class="imgaristogatos" src="https://i.pinimg.com/736x/40/16/53/401653b2d1f787f977d6faf5e8cbe970.jpg">
+        </div>
+        <div>
+            <h1>Toulouse - Memory Game</h1>
+        </div>
+    </header>
+    <section class="section-game">
+        <div class="container">
+            <div class="box">
+                <a href="#">
+                    <div class="divmascara1" id="hidden1" onclick="change1(1); return false;"></div> 
+                    <img class="imagemgame" src="https://i.pinimg.com/736x/46/40/fb/4640fb58235070791114cee716a1c13d.jpg" alt="gatinho berlioz"  onclick="change1(0); return false;" id="hidden1"> 
+                </a>
+            </div>
+            <div class="box">
+                <a href="#">
+                    <div class="divmascara1" id="hidden2" onclick="change2(1); return false;"></div>  
+                    <img class="imagemgame" src="https://i.pinimg.com/736x/43/46/10/4346103d72e17329d415fba34b51f0e3.jpg" alt="gatinho berlioz" onclick="change2(0); return false;" id="hidden2">
+                </a>         
+            </div>    
+            <div class="box">
+                <a href="#">
+                    <div class="divmascara1" id="hidden3" onclick="change3(1); return false;"></div>  
+                    <img class="imagemgame" src="https://i.pinimg.com/736x/43/46/10/4346103d72e17329d415fba34b51f0e3.jpg" alt="gatinho berlioz" onclick="change3(0); return false;" id="hidden3">
+                </a>
+            </div>    
+            <div class="box">
+                <a href="#">
+                    <div class="divmascara1" id="hidden4" onclick="change4(1); return false;"></div>  
+                    <img class="imagemgame" src="https://i.pinimg.com/736x/3e/47/28/3e4728d83e18549d4a9e7263d8949b44.jpg" alt="gatinho berlioz" onclick="change4(0); return false;" id="hidden4">
+                </a>
+            </div> 
+        </div>
+        <div class="container">
+            <div class="box">
+                <a href="#">
+                    <div class="divmascara2" id="hidden5" onclick="change5(1); return false;"></div>  
+                    <img class="imagemgame" src="https://i.pinimg.com/736x/88/71/91/88719184a1f79adf46473cda54be96ff.jpg" alt="gatinho berlioz" onclick="change5(0); return false;" id="hidden5">
+                </a>
+            </div>
+            <div class="box">
+                <a href="#">
+                    <div class="divmascara2" id="hidden6" onclick="change6(1); return false;"></div>  
+                    <img class="imagemgame" src="https://i.pinimg.com/736x/3e/47/28/3e4728d83e18549d4a9e7263d8949b44.jpg" alt="gatinho berlioz" onclick="change6(0); return false;" id="hidden6">
+                </a>
+            </div>    
+            <div class="box">
+                <a href="#">
+                    <div class="divmascara2" id="hidden7" onclick="change7(1); return false;"></div>  
+                    <img class="imagemgame" src="https://i.pinimg.com/736x/88/71/91/88719184a1f79adf46473cda54be96ff.jpg" alt="gatinho berlioz" onclick="change7(0); return false;" id="hidden7">
+                </a>
+            </div>    
+            <div class="box">
+                <a href="#">
+                    <div class="divmascara2" id="hidden8" onclick="change8(1); return false;"></div>  
+                    <img class="imagemgame" src="https://i.pinimg.com/736x/46/40/fb/4640fb58235070791114cee716a1c13d.jpg" alt="gatinho berlioz" onclick="change8(0); return false;" id="hidden8">
+                </a>
+            </div> 
+        </div>    
+    </section>
+    <footer>
+
+    </footer>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    function change1(flag) {
+    const div_reset = document.querySelector('#hidden1')
+    if(flag == 1){ 
+        div_reset.style.setProperty('visibility', 'hidden')
+    }
+    else{
+        div_reset.style.setProperty('visibility', 'visible');
+    }
+    }
+
+    function change2(flag) {
+    const div_reset = document.querySelector('#hidden2')
+    if(flag == 1){ 
+        div_reset.style.setProperty('visibility', 'hidden')
+    }
+    else{
+        div_reset.style.setProperty('visibility', 'visible');
+    }
+    }
+
+    function change3(flag) {
+    const div_reset = document.querySelector('#hidden3')
+    if(flag == 1){ 
+        div_reset.style.setProperty('visibility', 'hidden')
+    }
+    else{
+        div_reset.style.setProperty('visibility', 'visible');
+    }
+    }
+
+    function change4(flag) {
+    const div_reset = document.querySelector('#hidden4')
+    if(flag == 1){ 
+        div_reset.style.setProperty('visibility', 'hidden')
+    }
+    else{
+        div_reset.style.setProperty('visibility', 'visible');
+    }
+    }
+
+    function change5(flag) {
+    const div_reset = document.querySelector('#hidden5')
+    if(flag == 1){ 
+        div_reset.style.setProperty('visibility', 'hidden')
+    }
+    else{
+        div_reset.style.setProperty('visibility', 'visible');
+    }
+    }
+
+    function change6(flag) {
+    const div_reset = document.querySelector('#hidden6')
+    if(flag == 1){ 
+        div_reset.style.setProperty('visibility', 'hidden')
+    }
+    else{
+        div_reset.style.setProperty('visibility', 'visible');
+    }
+    }
+
+    function change7(flag) {
+    const div_reset = document.querySelector('#hidden7')
+    if(flag == 1){ 
+        div_reset.style.setProperty('visibility', 'hidden')
+    }
+    else{
+        div_reset.style.setProperty('visibility', 'visible');
+    }
+    }
+
+    function change8(flag) {
+    const div_reset = document.querySelector('#hidden8')
+    if(flag == 1){ 
+        div_reset.style.setProperty('visibility', 'hidden')
+    }
+    else{
+        div_reset.style.setProperty('visibility', 'visible');
+    }
+    }
+
+</script>

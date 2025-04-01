@@ -18,31 +18,55 @@
     </header>
     <section class="section-game">
         <div class="container">
-            <div>
-                <img class="imagemtemas" src="https://i.pinimg.com/736x/15/83/e8/1583e80b1b70d7e9c0230d2222916c18.jpg" alt="gatinha marie">
+            <div class="box">
+                <a href="#">
+                    <div class="divmascara1" id="hidden1" onclick="change1(1); return false;"></div> 
+                    <img class="imagemgame" src="https://i.pinimg.com/736x/15/83/e8/1583e80b1b70d7e9c0230d2222916c18.jpg" alt="gatinha marie"  onclick="change1(0); return false;" id="hidden1"> 
+                </a>
             </div>
-            <div>
-                <img class="imagemtemas" src="https://i.pinimg.com/736x/e0/b4/a0/e0b4a00f2f550ec51bf42d67ade96288.jpg" alt="gatinho berlioz">
+            <div class="box">
+                <a href="#">
+                    <div class="divmascara1" id="hidden2" onclick="change2(1); return false;"></div>  
+                    <img class="imagemgame" src="https://i.pinimg.com/736x/e0/b4/a0/e0b4a00f2f550ec51bf42d67ade96288.jpg" alt="gatinha marie" onclick="change2(0); return false;" id="hidden2">
+                </a>         
             </div>    
-            <div >
-                <img class="imagemtemas" src="https://i.pinimg.com/736x/99/36/de/9936dec3fe8bd612e23f9e08912b12a2.jpg" alt="gatinho toulouse">
+            <div class="box">
+                <a href="#">
+                    <div class="divmascara1" id="hidden3" onclick="change3(1); return false;"></div>  
+                    <img class="imagemgame" src="https://i.pinimg.com/736x/99/36/de/9936dec3fe8bd612e23f9e08912b12a2.jpg" alt="gatinha marie" onclick="change3(0); return false;" id="hidden3">
+                </a>
             </div>    
-            <div >
-                <img class="imagemtemas" src="https://i.pinimg.com/736x/72/ac/df/72acdfd78f8d4096800150174dce050f.jpg" alt="gatinho toulouse">
+            <div class="box">
+                <a href="#">
+                    <div class="divmascara1" id="hidden4" onclick="change4(1); return false;"></div>  
+                    <img class="imagemgame" src="https://i.pinimg.com/736x/72/ac/df/72acdfd78f8d4096800150174dce050f.jpg" alt="gatinha marie" onclick="change4(0); return false;" id="hidden4">
+                </a>
             </div> 
         </div>
         <div class="container">
-            <div>
-                <img class="imagemtemas" src="https://i.pinimg.com/736x/99/36/de/9936dec3fe8bd612e23f9e08912b12a2.jpg" alt="gatinha marie">
+            <div class="box">
+                <a href="#">
+                    <div class="divmascara2" id="hidden5" onclick="change5(1); return false;"></div>  
+                    <img class="imagemgame" src="https://i.pinimg.com/736x/99/36/de/9936dec3fe8bd612e23f9e08912b12a2.jpg" alt="gatinha marie" onclick="change5(0); return false;" id="hidden5">
+                </a>
             </div>
-            <div>
-                <img class="imagemtemas" src="https://i.pinimg.com/736x/72/ac/df/72acdfd78f8d4096800150174dce050f.jpg" alt="gatinho berlioz">
+            <div class="box">
+                <a href="#">
+                    <div class="divmascara2" id="hidden6" onclick="change6(1); return false;"></div>  
+                    <img class="imagemgame" src="https://i.pinimg.com/736x/72/ac/df/72acdfd78f8d4096800150174dce050f.jpg" alt="gatinha marie" onclick="change6(0); return false;" id="hidden6">
+                </a>
             </div>    
-            <div >
-                <img class="imagemtemas" src="https://i.pinimg.com/736x/e0/b4/a0/e0b4a00f2f550ec51bf42d67ade96288.jpg" alt="gatinho toulouse">
+            <div class="box">
+                <a href="#">
+                    <div class="divmascara2" id="hidden7" onclick="change7(1); return false;"></div>  
+                    <img class="imagemgame" src="https://i.pinimg.com/736x/e0/b4/a0/e0b4a00f2f550ec51bf42d67ade96288.jpg" alt="gatinha marie" onclick="change7(0); return false;" id="hidden7">
+                </a>
             </div>    
-            <div >
-                <img class="imagemtemas" src="https://i.pinimg.com/736x/15/83/e8/1583e80b1b70d7e9c0230d2222916c18.jpg" alt="gatinho toulouse">
+            <div class="box">
+                <a href="#">
+                    <div class="divmascara2" id="hidden8" onclick="change8(1); return false;"></div>  
+                    <img class="imagemgame" src="https://i.pinimg.com/736x/15/83/e8/1583e80b1b70d7e9c0230d2222916c18.jpg" alt="gatinha marie" onclick="change8(0); return false;" id="hidden8">
+                </a>
             </div> 
         </div>    
     </section>
@@ -52,3 +76,86 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+    function change1(flag) {
+    const div_reset = document.querySelector('#hidden1')
+    if(flag == 1){ 
+        div_reset.style.setProperty('visibility', 'hidden')
+    }
+    else{
+        div_reset.style.setProperty('visibility', 'visible');
+    }
+    }
+
+    function change2(flag) {
+    const div_reset = document.querySelector('#hidden2')
+    if(flag == 1){ 
+        div_reset.style.setProperty('visibility', 'hidden')
+    }
+    else{
+        div_reset.style.setProperty('visibility', 'visible');
+    }
+    }
+
+    function change3(flag) {
+    const div_reset = document.querySelector('#hidden3')
+    if(flag == 1){ 
+        div_reset.style.setProperty('visibility', 'hidden')
+    }
+    else{
+        div_reset.style.setProperty('visibility', 'visible');
+    }
+    }
+
+    function change4(flag) {
+    const div_reset = document.querySelector('#hidden4')
+    if(flag == 1){ 
+        div_reset.style.setProperty('visibility', 'hidden')
+    }
+    else{
+        div_reset.style.setProperty('visibility', 'visible');
+    }
+    }
+
+    function change5(flag) {
+    const div_reset = document.querySelector('#hidden5')
+    if(flag == 1){ 
+        div_reset.style.setProperty('visibility', 'hidden')
+    }
+    else{
+        div_reset.style.setProperty('visibility', 'visible');
+    }
+    }
+
+    function change6(flag) {
+    const div_reset = document.querySelector('#hidden6')
+    if(flag == 1){ 
+        div_reset.style.setProperty('visibility', 'hidden')
+    }
+    else{
+        div_reset.style.setProperty('visibility', 'visible');
+    }
+    }
+
+    function change7(flag) {
+    const div_reset = document.querySelector('#hidden7')
+    if(flag == 1){ 
+        div_reset.style.setProperty('visibility', 'hidden')
+    }
+    else{
+        div_reset.style.setProperty('visibility', 'visible');
+    }
+    }
+
+    function change8(flag) {
+    const div_reset = document.querySelector('#hidden8')
+    if(flag == 1){ 
+        div_reset.style.setProperty('visibility', 'hidden')
+    }
+    else{
+        div_reset.style.setProperty('visibility', 'visible');
+    }
+    }
+
+</script>
