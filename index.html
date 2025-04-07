@@ -14,8 +14,7 @@
 <body>
     <header>
         <div class="div-header">
-            <!--<a class="logo" href="/">Tiger Codes</a>!-->
-            <div class="mobile-menu" onclick="toggleNav()">
+            <div class="menu-icon" onclick="menuShow()">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
@@ -29,24 +28,60 @@
         </div>
     </header>
     <nav>
-        <ul class="manrope-nav nav-fonte">
-            <li class="li-estilo"><b>1° bimestre</b>
-                <ul>
-                    <li><a href="\11-03\barbara.html" target="_blank" class="manrope-nav nav-fonte">11/03 - Currículo</a></li>
-                    <li><a href="\18-03\index.html" target="_blank" class="manrope-nav nav-fonte">18/03 - Notícias</a></li>
-                    <li><a href="\25-03\index.html" target="_blank" class="manrope-nav nav-fonte">25/03 - Jogo da memória</a></li>
-                </ul>
-            </li>
-            <b><li class="li-estilo">2° bimestre</li></b>
-            <b><li class="li-estilo">3° bimestre</li></b>
-            <b><li>4° bimestre</li></b>
-        </ul>
+        <div class="nav-list">
+            <ul class="manrope-nav nav-fonte">
+                <li class="nav-item">
+                <b>1° bimestre</b>
+                    <ul>
+                        <li><a href="\11-03\barbara.html" target="_blank" class="nav-fonte">11/03 - Currículo</a></li>
+                        <li><a href="\18-03\index.html" target="_blank" class="nav-fonte">18/03 - Notícias</a></li>
+                        <li><a href="\25-03\index.html" target="_blank" class="nav-fonte">25/03 - Jogo da memória</a></li>
+                    </ul>
+                </li>
+                <b><li class="nav-item">2° bimestre</li></b>
+                <b><li class="nav-item">3° bimestre</li></b>
+                <b><li>4° bimestre</li></b>
+            </ul>
+        </div>
     </nav>
+    <div class="mobile-menu">
+        <div class="nav-list">
+            <ul class="manrope-nav nav-fonte">
+                <li class="nav-item">
+                <b>1° bimestre</b>
+                    <ul>
+                        <li><a href="\11-03\barbara.html" target="_blank" class="nav-fonte">11/03 - Currículo</a></li>
+                        <li><a href="\18-03\index.html" target="_blank" class="nav-fonte">18/03 - Notícias</a></li>
+                        <li><a href="\25-03\index.html" target="_blank" class="nav-fonte">25/03 - Jogo da memória</a></li>
+                    </ul>
+                </li>
+                <b><li class="nav-item">2° bimestre</li></b>
+                <b><li class="nav-item">3° bimestre</li></b>
+                <b><li>4° bimestre</li></b>
+            </ul>
+        </div>
+    </div>
     <main>
         
     </main>
     <footer>
 
     </footer>
+
+    <script>
+        function menuShow() {
+        console.log('menuShow foi chamado');  // Verifica se a função foi chamada
+        
+        let menuMobile = document.querySelector('.mobile-menu .nav-list');
+        
+        if (menuMobile.classList.contains('open')) {
+            console.log('Removendo a classe "open"');
+            menuMobile.classList.remove('open');
+        } else {
+            console.log('Adicionando a classe "open"');
+            menuMobile.classList.add('open');
+        }
+        }
+    </script>
 </body>
 </html>
