@@ -4,7 +4,7 @@
 }
 
 body{
-
+    background-color: rgb(247,239,210);
     display:grid;
     min-height: 100vh;
     grid-template-rows:100px 1fr 75px;
@@ -37,8 +37,7 @@ header{
 }
 
 nav{
-    grid-area: barra;
-    background-color:rgb(247,239,210);
+    grid-area: barra;    
     border-right: solid 3px rgb(254,212,196);
 
     display: flex;
@@ -92,11 +91,6 @@ ul{
     padding: 0;
 }
 
-li{
-    margin: 0;
-    padding: 0;
-}
-
 .li-estilo{
     margin-bottom: 10px;
 }
@@ -112,8 +106,48 @@ i{
     right: 50px;
     top: 6%;
     transform: translateY(-6%);
+    cursor: pointer;
 }
 
 i:hover{
     font-size: 30.5px;
+}
+
+.mobile-menu div{
+    width: 32px;
+    height: 2px;
+    background: rgb(247,239,210);
+    margin: 8px;
+    margin-left: 50px;
+}
+
+.mobile-menu {
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 800px) {
+    nav{
+        position: absolute;
+        top:16vh;
+        left:0;
+        width:50vw;
+        height: 72vh;
+        background: rgb(247,239,210);
+        align-items: center;
+        justify-content: space-around;
+
+    }
+
+    body{
+        overflow: hidden;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    nav:active{
+        transform: translateX(0);
+    }
 }
