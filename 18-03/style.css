@@ -68,19 +68,35 @@ a {
     text-decoration: none; 
 }
 
-a:link {
+span:link {
     color:cornflowerblue;
 }
 
-a:visited {
+span:visited {
     color:dimgray;
 }   
 
-a:hover {
+span:hover {
     color: #0d388f;
 }
 
-a:active {
+span:active {
+    color:darkslategray;
+}
+
+p:link {
+    color:cornflowerblue;
+}
+
+p:visited {
+    color:dimgray;
+}   
+
+p:hover {
+    color: #0d388f;
+}
+
+p:active {
     color:darkslategray;
 }
 
