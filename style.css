@@ -4,7 +4,7 @@
 }
 
 body{
-    background-color: rgb(247,239,210);
+    background-color: rgb(233,215,192);
     display:grid;
     min-height: 100vh;
     grid-template-rows:100px 1fr 75px;
@@ -17,7 +17,7 @@ body{
 header{
     grid-area: topo;
 
-    background-color: rgb(254,212,196);
+    background-color: rgb(155,125,97);
     display: flex;
     justify-content: space-between;
     align-items: center; 
@@ -36,7 +36,7 @@ header{
 
 nav{
     grid-area: barra;    
-    border-right: solid 3px rgb(254,212,196);
+    border-right: solid 3px rgb(155, 125, 97);
 
     display: flex;
     justify-content: center;
@@ -45,12 +45,12 @@ nav{
 
 main{
     grid-area: conteudo;
-    background-color: rgb(247,239,210);
+    background-color: rgb(233,215,192);
 }
 
 footer{
     grid-area: rodape;
-    background-color: rgb(254,212,196);
+    background-color: rgb(155, 125, 97);
 }
 
 .manrope-titulo {
@@ -68,11 +68,11 @@ footer{
 }
 
 .estilo-titulo{
-    color: rgb(247,239,210);
+    color: rgb(233,215,192);
 }
 
 .nav-fonte{
-    color:rgb(156, 149, 48);
+    color:rgb(218, 163, 143);
     margin-top: 80px;
 }
 
@@ -91,7 +91,7 @@ a{
 }
 
 i{
-    color: rgb(247,239,210);
+    color: rgb(233,215,192);
     font-size: 29px;
     margin: 8px;
     margin-right: 50px;
@@ -107,7 +107,7 @@ i:hover{
 .menu-icon div{
     width: 32px;
     height: 2px;
-    background: rgb(247,239,210);
+    background: rgb(233,215,192);
     margin: 8px;
     margin-left: 50px;
 }
@@ -141,6 +141,6 @@ i:hover{
     }
 
     .mobile-menu .nav-list.open {
-    display: block; /* Torna visível quando a classe 'open' é adicionada */
+    display: block;
 }
 }
