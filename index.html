@@ -63,16 +63,29 @@
         </div>
     </div>
     <main>
-        
+        <div class="container-playlist">
+            <img src="https://i.pinimg.com/736x/40/60/da/4060da2d0951d09f719bb251d478dcca.jpg" alt="bambi capa playlist">
+            <div style="color: rgb(233,215,192); margin-left: 10px;" class="manrope-main">
+                <h3 >fav songs <3 · by babi</h3>
+                <p id="infoMusica"> hold on till may · pierce the veil</p>
+                <i class="fas fa-backward" style="font-size: 20px;" onclick="voltarMusica()"></i>
+                <i class="fas fa-play" style="font-size: 20px;" id="playBotao" onclick="playMusica()"></i>
+                <i class="fas fa-forward" style="font-size: 20px;" onclick="proximaMusica()"></i>
+                <i class="far fa-heart" style="font-size: 20px;" id="favoritar" onclick="favMusica()"></i>
+            </div>
+        </div>
     </main>
+
+    <audio id="player"></audio>
+
     <footer>
 
     </footer>
 
     <script>
         function menuShow() {
-        console.log('menuShow foi chamado');  // Verifica se a função foi chamada
-        
+        console.log('menuShow foi chamado');  
+
         let menuMobile = document.querySelector('.mobile-menu .nav-list');
         
         if (menuMobile.classList.contains('open')) {
@@ -82,6 +95,99 @@
             console.log('Adicionando a classe "open"');
             menuMobile.classList.add('open');
         }
+        }
+
+
+        const musicas = [
+        {
+            nome: "hold on till may",
+            artista:"pierce the veil",
+            src:"musicas/holdontillmay.mp3"
+        },
+        {
+            nome:"lacy",
+            artista:"olivia rodrigo",
+            src:"musicas/lacy.mp3"
+        },
+        {
+            nome:"little freak",
+            artista:"harry styles",
+            src:"musicas/littlefreak.mp3"
+        },
+        {
+            nome:"é tudo",
+            artista:"soweto",
+            src:"musicas/etudo.mp3"
+        },
+        {
+            nome:"change",
+            artista:"louis tomlinson",
+            src:"musicas/change.mp3"
+        },
+        {
+            nome: "seven",
+            artista: "taylor swift",
+            src: "musicas/seven.mp3"
+        },
+        {
+            nome:"mega star",
+            artista:"exaltasamba",
+            src:"musicas/megastar.mp3"
+        },
+    ]
+
+    
+    let indexAtual = 0;
+    let tocando = false;
+    let musicaFavorita = null; 
+
+    const player = document.getElementById('player');
+    const playBotao = document.getElementById('playBotao');
+    const infoMusica = document.getElementById('infoMusica');
+    const favoritar = document.getElementById('favoritar');
+
+    function carregarMusica(index) {
+        player.src = musicas[index].src;
+        infoMusica.textContent = `${musicas[index].nome} · ${musicas[index].artista}`;
+    }
+
+    function playMusica() {
+        if (!tocando) {
+            carregarMusica(indexAtual);
+            player.play();
+            playBotao.classList.remove('fa-play');
+            playBotao.classList.add('fa-pause');
+            tocando = true;
+        } else {
+            player.pause();
+            playBotao.classList.remove('fa-pause');
+            playBotao.classList.add('fa-play');
+            tocando = false;
+        }
+    }
+
+    function proximaMusica() {
+        indexAtual = (indexAtual + 1) % musicas.length;
+        carregarMusica(indexAtual);
+        if (tocando) player.play();
+    }
+
+    function voltarMusica() {
+        indexAtual = (indexAtual - 1 + musicas.length) % musicas.length;
+        carregarMusica(indexAtual);
+        if (tocando) player.play();
+    }
+
+    function favMusica() {
+            if (musicaFavorita === indexAtual) {
+                favoritar.classList.remove('fas', 'fa-heart');
+                favoritar.classList.add('far', 'fa-heart');
+                musicaFavorita = null;
+            } else {
+                favoritar.classList.remove('far', 'fa-heart');
+                favoritar.classList.add('fas', 'fa-heart');
+                musicaFavorita = indexAtual;
+            }
         }
     </script>
 </body>
