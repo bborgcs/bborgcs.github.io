@@ -102,44 +102,45 @@
         {
             nome: "hold on till may",
             artista:"pierce the veil",
-            src:"musicas/holdontillmay.mp3"
+            src:"musicas/holdontillmay.mp3",
         },
         {
             nome:"lacy",
             artista:"olivia rodrigo",
-            src:"musicas/lacy.mp3"
+            src:"musicas/lacy.mp3",
         },
         {
             nome:"little freak",
             artista:"harry styles",
-            src:"musicas/littlefreak.mp3"
+            src:"musicas/littlefreak.mp3",
         },
         {
             nome:"é tudo",
             artista:"soweto",
-            src:"musicas/etudo.mp3"
+            src:"musicas/etudo.mp3",
         },
         {
             nome:"change",
             artista:"louis tomlinson",
-            src:"musicas/change.mp3"
+            src:"musicas/change.mp3",
         },
         {
             nome: "seven",
             artista: "taylor swift",
-            src: "musicas/seven.mp3"
+            src: "musicas/seven.mp3",
         },
         {
             nome:"mega star",
             artista:"exaltasamba",
-            src:"musicas/megastar.mp3"
+            src:"musicas/megastar.mp3",
         },
     ]
 
     
     let indexAtual = 0;
     let tocando = false;
-    let musicaFavorita = null; 
+    let musicaFavorita = null;
+    let tempoAtual = 0; 
 
     const player = document.getElementById('player');
     const playBotao = document.getElementById('playBotao');
@@ -149,6 +150,7 @@
     function carregarMusica(index) {
         player.src = musicas[index].src;
         infoMusica.textContent = `${musicas[index].nome} · ${musicas[index].artista}`;
+        player.currentTime = tempoAtual;
     }
 
     function playMusica() {
@@ -159,6 +161,7 @@
             playBotao.classList.add('fa-pause');
             tocando = true;
         } else {
+            tempoAtual = player.currentTime;
             player.pause();
             playBotao.classList.remove('fa-pause');
             playBotao.classList.add('fa-play');
@@ -170,12 +173,14 @@
         indexAtual = (indexAtual + 1) % musicas.length;
         carregarMusica(indexAtual);
         if (tocando) player.play();
+        tempoAtual = 0;
     }
 
     function voltarMusica() {
         indexAtual = (indexAtual - 1 + musicas.length) % musicas.length;
         carregarMusica(indexAtual);
         if (tocando) player.play();
+        tempoAtual=0;
     }
 
     function favMusica() {
