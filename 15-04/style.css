@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  min-height: 100vh;
+  -ms-grid-columns: 350px 1fr;
+      grid-template-columns: 350px 1fr;
+      grid-template-areas: 'catalogo main';
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+aside {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: catalogo;
+  height: 100vh;
+  background-color: #fdfaee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-right: 1px solid black;
+}
+
+main {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: main;
+  background-color: white;
+}
+
+.mini-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.organizador {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.box, .box0, .box1, .box2, .box3, .box4, .box5 {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+}
+
+.box:hover, .box0:hover, .box1:hover, .box2:hover, .box3:hover, .box4:hover, .box5:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.box0 {
+  background-color: #9e182b;
+}
+
+.box1 {
+  background-color: #684627;
+}
+
+.box2 {
+  background-color: #7a6c4f;
+}
+
+.box3 {
+  background-color: #ccd0cf;
+}
+
+.box4 {
+  background-color: #c48181;
+}
+
+.box5 {
+  background-color: #d77764;
+}
+
+.box-result {
+  width: 140px;
+  height: 140px;
+  border: 3px solid black;
+  display: inline-block;
+  text-align: center;
+  font-size: 2em;
+  margin: 5px;
+  background-color: #9e182b;
+}
+/*# sourceMappingURL=style.css.map */
