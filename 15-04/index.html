@@ -42,8 +42,30 @@
         <div class="mini-container">
             <h2>alinhamento</h2>
 
-            <select name="flex-direction" value="flex-direction" id="flex">
-                <option name="column">
+            <select name="flex-direction" id="flex">
+                <option value="" disabled selected>FLEX-DIRECTION</option>
+                <option value="column">column</option>
+                <option value="row">row</option>
+                <option value="column-reverse">column-reverse</option>
+                <option value="row-reverse">row-reverse</option>
+            </select>
+
+            <select name="justify-content" id="justify">
+                <option value="" disabled selected>JUSTIFY-CONTENT</option>
+                <option value="center">center</option>
+                <option value="flex-start">flex-start</option>
+                <option value="flex-end">flex-end</option>
+                <option value="space-around">space-around</option>
+                <option value="space-between">space-between</option>
+            </select>
+
+            <select name="align-items" id="align">
+                <option value="" disabled selected>ALIGN-ITEMS</option>
+                <option value="center">center</option>
+                <option value="flex-start">flex-start</option>
+                <option value="flex-end">flex-end</option>
+                <option value="stretch">stretch</option>
+                <option value="baseline">baseline</option>
             </select>
         </div>
     </aside>
@@ -55,5 +77,7 @@
             <div class="box-result">3</div>
         </div>
     </main>
+
+    <script src="/15-04/script.js"></script>
 </body>
 </html>

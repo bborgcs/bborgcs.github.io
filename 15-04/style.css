@@ -7,8 +7,8 @@ body {
   display: -ms-grid;
   display: grid;
   min-height: 100vh;
-  -ms-grid-columns: 350px 1fr;
-      grid-template-columns: 350px 1fr;
+  -ms-grid-columns: minmax(200px, 20vw) 1fr;
+      grid-template-columns: minmax(200px, 20vw) 1fr;
       grid-template-areas: 'catalogo main';
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
@@ -38,6 +38,9 @@ main {
   -ms-grid-column: 2;
   grid-area: main;
   background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .mini-container {
@@ -111,5 +114,10 @@ main {
   font-size: 2em;
   margin: 5px;
   background-color: #9e182b;
+}
+
+select {
+  width: 150px;
+  margin: 2.5px;
 }
 /*# sourceMappingURL=style.css.map */
