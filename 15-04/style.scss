@@ -35,9 +35,7 @@ aside{
 
 main {
     grid-area: main;
-
     background-color: white;
-    display: flex;
 }
 
 .mini-container{
@@ -96,20 +94,41 @@ main {
     @extend .box;
 }
 
+.box-form{
+    background-color: $cor0;
+    @extend .box;
+}
+
+.box-result, .box-form{
+    transition: border-radius 0.5s ease, background-color 0.5s ease;
+}
+
 .box-result{
     width: 140px;
     height: 140px;
     border: 3px solid black;
-    display: inline-block;
-    text-align:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 2em;
     margin: 5px;
     
-
     background-color: $cor0;
+}
+
+.container-result{
+    display: flex;
 }
 
 select{
     width: 150px;
     margin: 2.5px;
+}
+
+.borda1{
+    border: solid 3px black;
+}
+
+.borda2{
+    border: solid 3px black;
 }

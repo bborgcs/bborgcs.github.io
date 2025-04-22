@@ -16,33 +16,33 @@
             <h2>preenchimento</h2>
 
             <div class="organizador">
-                <div class="box0" style="border: solid 3px black;"></div>
-                <div class="box1"></div>
-                <div class="box2"></div>
+                <div class="box0 borda1" onclick="escolha(0);"></div>
+                <div class="box1" onclick="escolha(1);"></div>
+                <div class="box2" onclick="escolha(2);"></div>
             </div>
             <div class="organizador">
-                <div class="box3"></div>
-                <div class="box4"></div>
-                <div class="box5"></div>
+                <div class="box3" onclick="escolha(3);"></div>
+                <div class="box4" onclick="escolha(4);"></div>
+                <div class="box5" onclick="escolha(5);"></div>
             </div>
         </div>
         <div class="mini-container">
             <h2>formato</h2>
 
             <div class="organizador">
-                <div class="box0" style="border: solid 3px black;"></div>
-                <div class="box0" style="border-radius: 50%;"></div>
+                <div class="box-form borda2" id="form" onclick="formato('quadrado');"></div>
+                <div class="box-form" style="border-radius: 50%;" id="form" onclick="formato('circulo')";></div>
             </div>
         </div>
         <div class="mini-container">
             <h2>tamanho</h2>
 
-            <input type="number" name="textnumber" value="140" min="100" max="180" step="10">
+            <input type="number" value="140" min="100" max="180" step="10" oninput="ajustaTamanho()">
         </div>
         <div class="mini-container">
             <h2>alinhamento</h2>
 
-            <select name="flex-direction" id="flex">
+            <select name="flex-direction" onchange="alinhamentoFlex(this)">
                 <option value="" disabled selected>FLEX-DIRECTION</option>
                 <option value="column">column</option>
                 <option value="row">row</option>
@@ -50,7 +50,7 @@
                 <option value="row-reverse">row-reverse</option>
             </select>
 
-            <select name="justify-content" id="justify">
+            <select name="justify-content" onchange="alinhamentoJustify(this)">
                 <option value="" disabled selected>JUSTIFY-CONTENT</option>
                 <option value="center">center</option>
                 <option value="flex-start">flex-start</option>
@@ -59,7 +59,7 @@
                 <option value="space-between">space-between</option>
             </select>
 
-            <select name="align-items" id="align">
+            <select name="align-items" onchange="alinhamentoAlign(this)">
                 <option value="" disabled selected>ALIGN-ITEMS</option>
                 <option value="center">center</option>
                 <option value="flex-start">flex-start</option>
@@ -71,10 +71,10 @@
     </aside>
 
     <main>
-        <div class="container">
-            <div class="box-result">1</div>
-            <div class="box-result">2</div>
-            <div class="box-result">3</div>
+        <div class="container-result">
+            <div class="box-result" id="caixa">1</div>
+            <div class="box-result" id="caixa">2</div>
+            <div class="box-result" id="caixa">3</div>
         </div>
     </main>
 
