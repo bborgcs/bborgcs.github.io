@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    background-color:#fdfaee;
+    display:grid;
+    min-height: 100vh;
+    grid-template-rows:100px 1fr;
+    grid-template-columns: 250px 1fr 375px;
+    grid-template-areas:'topo topo topo' 
+                        'barra conteudo visaoGeral'
+
+}
+
+nav{
+    grid-area: topo;
+
+}
+
+section{
+    grid-area: visaoGeral;
+
+}
+
+main{
+    grid-area: conteudo;
+
+}
+
+aside{
+    grid-area: barra;
+
+}
+
+.rounded-bottom-lg {
+    border-bottom-left-radius: 12rem;
+    border-bottom-right-radius: 12rem;
+  }
