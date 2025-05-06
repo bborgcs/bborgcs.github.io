@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 225px 1fr;
+  grid-template-areas: "info jogo";
+  background-image: url(/06-05/imagens/background.jpg);
+  background-size: cover;
+}
+
+aside {
+  grid-area: info;
+}
+
+main {
+  grid-area: jogo;
+}
+
+.div-info {
+  height: 40%;
+  width: 100%;
+  margin: 5px;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
+}/*# sourceMappingURL=style.css.map */
