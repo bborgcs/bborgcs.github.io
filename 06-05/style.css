@@ -14,10 +14,14 @@ body {
 
 aside {
   grid-area: info;
+  z-index: 1;
 }
 
 main {
   grid-area: jogo;
+  position: relative;
+  height: 100vh;
+  z-index: 2;
 }
 
 .div-info {
@@ -33,9 +37,26 @@ main {
 }
 
 .estilo-nave {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  height: auto;
+  position: absolute;
+  transition: left 0.1s;
+  left: 50%;
   bottom: 0;
+}
+
+#img_nave {
+  position: absolute;
+  transition: left 0.1s;
+  left: 50%;
+  bottom: 0;
+}
+
+.tela_pause {
+  background-color: rgba(128, 128, 128, 0.7);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  display: none;
+  top: 0;
+  left: 0;
 }/*# sourceMappingURL=style.css.map */

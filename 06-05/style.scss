@@ -53,3 +53,16 @@ main{
     bottom: 0;
 }
 
+.tela_pause{
+    background-color: rgba(128, 128, 128, 0.7);
+
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    z-index: 9999;
+    display: none;
+
+    top: 0;
+    left: 0;
+}

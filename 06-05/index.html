@@ -17,7 +17,7 @@
                         <img src="imagens/clock.png" class="icons" alt="tempo">
                     </td>
                     <td>
-                        <h5 id="v">0</h5>
+                        <h5 id="v">00:00:00</h5>
                     </td>
                 </tr>
                 <tr>
@@ -43,7 +43,7 @@
         <img src="imagens/nave.png" class="estilo-nave" alt="nave" id="img_nave">
     </main>
 
-   
+    <div class="tela_pause justify-content-center align-items-center text-white" id="tela"><h1>PAUSE</h1></div>
 </body>
 
 <script type="text/javascript">
@@ -53,6 +53,8 @@
     let posY = 0;
 
     let i;
+
+    let pause = document.querySelector("#tela")
 
     function add() { 
         val++;
@@ -77,26 +79,33 @@
     document.onkeypress = function (e) {
 
     if(e.keyCode == 112 || e.keyCode == 80) {
-        if(i === 1) pararContagem();
-        else Contagem();
+        if(i === 1) {
+            pararContagem();
+            pause.style.display = 'flex';
+        }
+        else {
+            Contagem();
+            pause.style.display = 'none';
+        }
     }
 
     };
 
-        
-    window.addEventListener('keydown', function(event) {
-        let img = document.querySelector("#img_nave")
-        const screenWidth = window.innerWidth;
+        window.addEventListener('keydown', function(event) {
+            if (i !== 1) return;
 
-        if (event.key === 'ArrowRight') { 
-            posX += 5; 
-            if (posX > 95) posX = 95;
-        } else if (event.key === 'ArrowLeft') {  
-            posX -= 5;
-            if (posX < 5) posX = 5; 
-        }
-        img.style.left = `${posX}%`;
-    });
+            let img = document.querySelector("#img_nave")
+            const screenWidth = window.innerWidth;
+
+            if (event.key === 'ArrowRight') { 
+                posX += 5; 
+                if (posX > 95) posX = 95;
+            } else if (event.key === 'ArrowLeft') {  
+                posX -= 5;
+                if (posX < 5) posX = 5; 
+            }
+            img.style.left = `${posX}%`;
+        });
 
 </script>
 </html>
