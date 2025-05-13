@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Jogo</title>
 </head>
-<body onload="Contagem()">
+<body onload="Contagem(); movimentacaoAlien();">
     <aside>
         <div class="div-info bg-dark text-white rounded-bottom-lg d-flex justify-content-around align-items-center border border-1 border-white">
             <table class="table table-dark text-center w-auto">
@@ -39,74 +39,141 @@
             </table>
         </div>
     </aside>
-    <main class="d-flex align-items-end justify-content-center">
-        <img src="imagens/nave.png" class="estilo-nave" alt="nave" id="img_nave">
-        <img src="imagens/missil.png" alt="missil">
+    <main >
+        <div class="alien_container">
+            <img src="imagens/alien.png" class="estilo_alien" id="alien1" >
+            <img src="imagens/alien.png" class="estilo_alien" id="alien2" >
+            <img src="imagens/alien.png" class="estilo_alien" id="alien3"  >
+        </div>
+        <div class="container_nave">
+            <img src="imagens/nave.png" class="estilo-nave" alt="nave" id="img_nave">
+            <img src="imagens/missil.png" class="estilo_missilD" alt="missil" id="img_missilD">
+            <img src="imagens/missil.png" class="estilo_missilE" alt="missil" id="img_missilE">
+        </div>
     </main>
 
     <div class="tela_pause justify-content-center align-items-center text-white" id="tela"><h1>PAUSE</h1></div>
 </body>
 
 <script type="text/javascript">
-    let val = 0;
-    let tempo;
-    let posX = 35;
-    let posY = 0;
+let val = 0;
+let tempo;
+let posX = 40;
+let i;
 
-    let i;
+let pause = document.querySelector("#tela");
+let nave = document.querySelector("#img_nave");
+let missilD = document.querySelector("#img_missilD");
+let missilE = document.querySelector("#img_missilE");
 
-    let pause = document.querySelector("#tela")
+let atirar = true;
+let proximoMissil = 'E';
+let missilEFinalizou = false;
+let missilDFinalizou = false;
 
-    function add() { 
-        val++;
-        const hours = Math.floor(val / 3600);
-        const minutes = Math.floor((val % 3600) / 60); 
-        const seconds = val % 60;
+function Posicionar() {
+    nave.style.left = `${posX}%`;
+    missilD.style.left = `${posX}%`;
+    missilE.style.left = `${posX}%`;
+}
 
-        const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-        document.querySelector("#v").textContent = formattedTime;
+function add() { 
+    val++;
+    const hours = Math.floor(val / 3600);
+    const minutes = Math.floor((val % 3600) / 60); 
+    const seconds = val % 60;
+    document.querySelector("#v").textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+function Contagem() {
+    tempo = setInterval(add, 1000);
+    i = 1;
+    Posicionar();
+}
+
+function pararContagem() {
+    clearInterval(tempo);
+    i = 0;
+}
+
+function movimentacaoAlien(){
+    let aliens = document.querySelectorAll(".estilo_alien");
+
+    aliens.forEach(alien => {
+        alien.style.animation = 'none';
+        alien.offsetHeight;
+        alien.style.animation = 'movimentoAlien 15s linear infinite';
+    });
+
+}
+
+// Detecta fim da animação
+function handleAnimationEnd(missil) {
+    missil.classList.remove("disparar");
+
+    if (missil === missilE) {
+        missilEFinalizou = true;
+    } else {
+        missilDFinalizou = true;
     }
 
-    function Contagem(){
-        tempo = setInterval(add, 1000);
-        i=1;
+    if (missilEFinalizou && missilDFinalizou) {
+        // só volta os dois juntos
+        missilE.style.bottom = '30px';
+        missilD.style.bottom = '30px';
+        missilEFinalizou = false;
+        missilDFinalizou = false;
     }
 
-    function pararContagem(){
-        clearInterval(tempo);
-        i=0;
-    }
+    atirar = true;
+}
 
-    document.onkeypress = function (e) {
+// Escuta fim da animação
+missilE.addEventListener('animationend', () => handleAnimationEnd(missilE));
+missilD.addEventListener('animationend', () => handleAnimationEnd(missilD));
 
-    if(e.keyCode == 112 || e.keyCode == 80) {
-        if(i === 1) {
+document.onkeypress = function (e) {
+    if (e.keyCode === 112 || e.keyCode === 80) {
+        if (i === 1) {
             pararContagem();
             pause.style.display = 'flex';
-        }
-        else {
+        } else {
             Contagem();
             pause.style.display = 'none';
         }
     }
 
-    };
+    if (e.keyCode === 32 && atirar) {
+        atirar = false;
+        let missilAtual;
 
-        window.addEventListener('keydown', function(event) {
-            if (i !== 1) return;
+        if (proximoMissil === 'E') {
+            missilAtual = missilE;
+            proximoMissil = 'D';
+        } else {
+            missilAtual = missilD;
+            proximoMissil = 'E';
+        }
 
-            let img = document.querySelector("#img_nave")
-            const screenWidth = window.innerWidth;
+        missilAtual.classList.add("disparar");
+    }
+};
 
-            if (event.key === 'ArrowRight') { 
-                posX += 5; 
-                if (posX > 95) posX = 95;
-            } else if (event.key === 'ArrowLeft') {  
-                posX -= 5;
-                if (posX < 5) posX = 5; 
-            }
-            img.style.left = `${posX}%`;
-        });
+window.addEventListener('keydown', function(event) {
+    if (i !== 1) return;
 
+    if (event.key === 'ArrowRight') { 
+        posX += 5; 
+        if (posX > 80) posX = 80;
+    } else if (event.key === 'ArrowLeft') {  
+        posX -= 5;
+        if (posX < 5) posX = 5; 
+    }
+
+    nave.style.left = `${posX}%`;
+    missilD.style.left = `${posX}%`;
+    missilE.style.left = `${posX}%`;
+});
 </script>
+
 </html>
