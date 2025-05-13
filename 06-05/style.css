@@ -46,7 +46,7 @@ main {
 #img_nave {
   position: absolute;
   transition: left 0.1s;
-  left: 50%;
+  left: 35%;
   bottom: 0;
 }
 
