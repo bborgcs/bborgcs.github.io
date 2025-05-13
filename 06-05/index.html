@@ -52,6 +52,8 @@
     let posX = 50;
     let posY = 0;
 
+    let i;
+
     function add() { 
         val++;
         const hours = Math.floor(val / 3600);
@@ -64,11 +66,22 @@
 
     function Contagem(){
         tempo = setInterval(add, 1000);
+        i=1;
     }
 
     function pararContagem(){
-        clearInterval(id);
+        clearInterval(tempo);
+        i=0;
     }
+
+    document.onkeypress = function (e) {
+
+    if(e.keyCode == 112 || e.keyCode == 80) {
+        if(i === 1) pararContagem();
+        else Contagem();
+    }
+
+    };
 
         
     window.addEventListener('keydown', function(event) {
