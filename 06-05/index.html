@@ -17,7 +17,7 @@
                         <img src="imagens/clock.png" class="icons" alt="tempo">
                     </td>
                     <td>
-                        <h1 id="v">0</h1>
+                        <h5 id="v">0</h5>
                     </td>
                 </tr>
                 <tr>
@@ -25,7 +25,7 @@
                         <img src="imagens/nave.png" class="icons" alt="vida">
                     </td>
                     <td>
-                        LIFE:3
+                        <h5>LIFE:3</h5>
                     </td>
                 </tr>
                 <tr>
@@ -33,18 +33,24 @@
                         <img src="imagens/alien.png" class="icons" alt="alien">
                     </td>
                     <td>
-                        ALIEN:0
+                        <h5>ALIEN:0</h5>
                     </td>
                 </tr>
             </table>
         </div>
     </aside>
-    <main>
-        <img src="imagens/nave.png" class="estilo-nave" alt="nave">
+    <main class="d-flex align-items-end justify-content-center">
+        <img src="imagens/nave.png" class="estilo-nave" alt="nave" id="img_nave">
     </main>
+
+    <div class="tela_pause"> </div>
 </body>
+
 <script type="text/javascript">
     let val = 0;
+    let tempo;
+    let posX = 50;
+    let posY = 0;
 
     function add() { 
         val++;
@@ -55,5 +61,29 @@
         const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
         document.querySelector("#v").textContent = formattedTime;
     }
+
+    function Contagem(){
+        tempo = setInterval(add, 1000);
+    }
+
+    function pararContagem(){
+        clearInterval(id);
+    }
+
+        
+    window.addEventListener('keydown', function(event) {
+        let img = document.querySelector("#img_nave")
+        const screenWidth = window.innerWidth;
+
+        if (event.key === 'ArrowRight') { 
+            posX += 5; 
+            if (posX > 95) posX = 95;
+        } else if (event.key === 'ArrowLeft') {  
+            posX -= 5;
+            if (posX < 5) posX = 5; 
+        }
+        img.style.left = `${posX}%`;
+    });
+
 </script>
 </html>

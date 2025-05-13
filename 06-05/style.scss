@@ -15,10 +15,15 @@ body{
 
 aside{
     grid-area: info;
+    z-index: 1;
 }
 
 main{
     grid-area: jogo;
+
+    position: relative;
+    height: 100vh;
+    z-index: 2;
 }
 
 .div-info{
@@ -35,8 +40,27 @@ main{
 }
 
 .estilo-nave{
-    display: block;
-      margin: 0 auto;
-      max-width: 100%;
-      height: auto;bottom: 0;
+    position: absolute;
+    transition: left 0.1s; 
+    left: 50%;
+    bottom: 0;
+}
+
+#img_nave{
+    position: absolute;
+    transition: left 0.1s; 
+    left: 50%;
+    bottom: 0;
+}
+
+.tela_pause{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999; 
+
+    background-color: grey;
+    
 }
