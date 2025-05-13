@@ -8,14 +8,52 @@
     <link rel="stylesheet" href="style.css">
     <title>Jogo</title>
 </head>
-<body>
+<body onload="Contagem()">
     <aside>
         <div class="div-info bg-dark text-white rounded-bottom-lg d-flex justify-content-around align-items-center border border-1 border-white">
-            oi
+            <table class="table table-dark text-center w-auto">
+                <tr>
+                    <td>
+                        <img src="imagens/clock.png" class="icons" alt="tempo">
+                    </td>
+                    <td>
+                        <h1 id="v">0</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="imagens/nave.png" class="icons" alt="vida">
+                    </td>
+                    <td>
+                        LIFE:3
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="imagens/alien.png" class="icons" alt="alien">
+                    </td>
+                    <td>
+                        ALIEN:0
+                    </td>
+                </tr>
+            </table>
         </div>
     </aside>
     <main>
-
+        <img src="imagens/nave.png" class="estilo-nave" alt="nave">
     </main>
 </body>
+<script type="text/javascript">
+    let val = 0;
+
+    function add() { 
+        val++;
+        const hours = Math.floor(val / 3600);
+        const minutes = Math.floor((val % 3600) / 60); 
+        const seconds = val % 60;
+
+        const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        document.querySelector("#v").textContent = formattedTime;
+    }
+</script>
 </html>
